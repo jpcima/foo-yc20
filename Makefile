@@ -24,7 +24,7 @@ CFLAGS=-O3 -mtune=native -march=native -mfpmath=sse -ffast-math -ftree-vectorize
 endif
 endif
 
-CFLAGS_X = $(CFLAGS) -fPIC -DVERSION=$(VERSION) -Isrc/ -Iinclude/ -DPREFIX=$(PREFIX) -Wall
+CFLAGS_X = $(CFLAGS) -fPIC -DVERSION=$(VERSION) -Isrc/ -Iinclude/ -DPREFIX=$(PREFIX) -Wall -Ithirdparty/faust-0.9.73/architecture/
 
 $(OBJS_NODEPS): CFLAGS_use = $(CFLAGS_X) 
 $(OBJS_JACK): CFLAGS_use = $(CFLAGS_X) `pkg-config --cflags jack`
